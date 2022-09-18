@@ -1,0 +1,201 @@
+:root {
+  --background: #38302B;
+  --header: #2D2622;
+  --tile-back: #83756C;
+  --text-color: #83756C;
+  --font-family: "Alata", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  font-family: var(--font-family);
+}
+
+/* ------------------------ Header ------------------------ */
+.header {
+  width: 100%;
+  flex: 0 0;
+  order: 1;
+  background-color: var(--header);
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* ------------------------ Board Size Dropdown ------------------------ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: var(--header);
+  font-family: var(--font-family);;
+  color: var(--text-color);
+  width: 150px;
+  height: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  background-color: #ecdfd7;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 150px;
+  background-color: var(--header);
+  z-index: 1;
+}
+
+.dropdown-content p {
+  padding: 12px 16px 12px 12px;
+  margin: 0;
+  display: block;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-content p:hover {
+  background-color: #ecdfd7
+}
+
+.dropdown-btn i {
+  line-height: 0.7rem;
+}
+
+.fa-square-o {
+  font-size: 0.8rem;
+}
+
+.size-option span {
+  float: left;
+  width: 50px;
+  text-align: right;
+}
+
+/* ------------------------ Flip Counter ------------------------ */
+.flip-counter-container {
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+
+.flip-counter {
+  margin: 0 0 0 40px;
+}
+
+/* ------------------------ Footer ------------------------ */
+.footer {
+  width: 100%;
+  flex: 0 0 30px;
+  order: 3;
+  background-color: var(--header);
+  color: var(--text-color);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  margin: 5px auto;
+  text-align: center;
+}
+
+/* ------------------------ Tile Board ------------------------ */
+.tiles-container-wrapper {
+  position: relative;
+  order: 2;
+  flex: 1 1 auto;
+  margin: 0 1%; /* Horizontal margins to provide space for mismatch animation. */
+}
+
+.tiles-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 100%;
+  text-align: center;
+  font-size: 0; /* Removes whitespace between inline-block .tile-box'es */
+}
+
+.tile-box {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  background-color: transparent;
+  /* Width and height are being set dynamically in JS. */
+}
+
+.tile-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  margin: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+}
+
+.tile {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 85%;
+  width: 85%;
+  transition: transform 0.15s, height 0.02s, width 0.02s;
+  transform-style: preserve-3d;
+}
+
+.tile-hover:hover {
+  height: 100%;
+  width: 100%;
+}
+
+.flipped-up {
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.tile-back, .tile-face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.tile-back {
+  height: 100%;
+  width: 100%;
+}
+
+.tile-face {
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%) rotateY(180deg);
+  border-radius: 3px;
+}
+
+.tile-img {
+  max-width: 90%;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+}

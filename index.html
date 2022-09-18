@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tiles</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="icon" type="image/png" href="./images/favicon_192.png" sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alata&display=swap"> 
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Prevent FOUC -->
+    <style>
+      .FOUC-hidden {display: none;}
+    </style>
+    <script type="text/javascript">
+      document.getElementsByTagName("html")[0].classList.toggle('FOUC-hidden');
+      window.onload = function () {
+        document.getElementsByTagName("html")[0].classList.toggle('FOUC-hidden');
+      };
+    </script>
+    <!-- /Prevent FOUC -->
+    
+  </head>
+  <body>
+    <div class="header">
+      <div class="dropdown">
+        <button class="dropdown-btn">Board Size <i class="fa fa-angle-down fa-lg"></i></button>
+        <div class="dropdown-content">
+          <p class="size-option" id="small">
+            <span>
+              <i class="fa fa-square-o"></i>              
+            </span>
+            &nbsp; Small
+          </p>
+          <p class="size-option" id="medium">
+            <span>
+              <i class="fa fa-square-o"></i>
+              <i class="fa fa-square-o"></i>
+            </span>
+            &nbsp; Medium
+          </p>
+          <p class="size-option" id="large">
+            <span>
+              <i class="fa fa-square-o"></i>
+              <i class="fa fa-square-o"></i>
+              <i class="fa fa-square-o"></i>
+            </span>
+            &nbsp; Large
+          </p>
+        </div> 
+      </div>
+      <div class="flip-counter-container">
+        <p class="flip-counter">
+          Flips: <span class="flips">0</span>
+        </p>
+      </div>
+    </div>
+    <div class="tiles-container-wrapper">
+      <div class="tiles-container"></div>
+    </div>    
+    <div class="footer">
+      <p class="copyright">
+        Copyright &#169;
+        <script type="text/JavaScript">
+          document.write(new Date().getFullYear());
+        </script>
+        &nbsp; &nbsp; Linas Trumpickas
+      </p>
+    </div>   
+    <script
+		  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous">
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
